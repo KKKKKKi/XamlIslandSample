@@ -1,0 +1,26 @@
+﻿<Window x:Class="cs2019.Views.ShellView" 
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:cal="http://www.caliburnproject.org"
+        xmlns:XamlHost="clr-namespace:Microsoft.Toolkit.Wpf.UI.XamlHost;assembly=Microsoft.Toolkit.Wpf.UI.XamlHost" 
+        xmlns:v="clr-namespace:cs2019.Views"
+        mc:Ignorable="d"
+        Title="{Binding DisplayName, Mode=OneWay}" 
+        Height="400" 
+        Width="600">
+
+    <Grid x:Name="RootGrid">
+        <StackPanel HorizontalAlignment="Center"
+                    VerticalAlignment="Center"
+                    Width="160" Height="120">
+            <XamlHost:WindowsXamlHost
+                InitialTypeName="Windows.UI.Xaml.Controls.TextBox" 
+                ChildChanged="WindowsXamlHost_ChildChanged" />
+            <XamlHost:WindowsXamlHost
+                InitialTypeName="Windows.UI.Xaml.Controls.Button"
+                ChildChanged="WindowsXamlHost_ChildChanged" />
+        </StackPanel>
+    </Grid>
+</Window>
